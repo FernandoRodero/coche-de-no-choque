@@ -5,7 +5,9 @@ basic.showString("ºC")
 basic.forever(function () {
     basic.showIcon(IconNames.Heart)
     if (maqueen.Ultrasonic(PingUnit.Centimeters) > 15) {
-        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 50)
+        while (maqueen.Ultrasonic(PingUnit.Centimeters) > 15) {
+            maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 50)
+        }
     } else {
         while (maqueen.Ultrasonic(PingUnit.Centimeters) <= 15) {
             maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 80)
